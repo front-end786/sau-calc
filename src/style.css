@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --bg-color-primary: #fbfbfb;
+  --border: #62626234;
+  --bg-secondary: #fcfcfc47;
+  --bg-input: #dcdcdca7;
+  --bg-output: #e4e1e1b0;
+  --h1: 4.5rem;
+  --text-medium: 2rem;
+  --text-large: 1.6rem;
+}
+
+body.dark {
+  --bg-output: #080807;
+  --bg-input: #101010;
+  --color: #fdfeff;
+  background: linear-gradient(#0000008b, #000000e6),
+    url(https://sayyedasad.netlify.app/assets/images/hero-bg.webp);
+}
+
+body {
+  background: linear-gradient(#ffffffa2, #ffffffe6),
+    url(https://sayyedasad.netlify.app/assets/images/hero-bg-light.webp);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+#root {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: var(--h1);
+  font-weight: 300;
+  margin: 2rem 0;
+}
+
+.calc {
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0.5rem auto;
+  max-width: 40rem;
+  border: 1px solid var(--border);
+}
+.inputs {
+  background-color: var(--bg-input);
+  display: flex;
+  flex-wrap: wrap;
+  border-collapse: collapse;
+}
+
+.inputs button {
+  background: none;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 25%;
+  border: none;
+  padding: 3rem;
+  font-size: var(--text-large);
+  transition: all 0.4s;
+  font-weight: 400;
+}
+
+p {
+  font-size: var(--text-medium);
+  margin: 1rem 0;
+  height: 3rem;
+}
+
+button:hover {
+  background-color: var(--border);
+}
+
+.outputs {
+  background-color: var(--bg-output);
+  text-align: right;
+  padding: 0.5rem 1rem;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+input {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: content-box;
+  background: url(./moon-outline.svg);
+  border-radius: 50%;
+  min-width: 25px;
+  max-width: 25px;
+  height: 25px;
+}
+
+input:checked {
+  background: url(./sunny-outline.svg);
+}
